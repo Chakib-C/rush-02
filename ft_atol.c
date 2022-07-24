@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atol(char *str)
+int     ft_atoi(char *str)
 {
-	long	n;
-	int	negative;
+        int     n;
+        int     i;
+        int     sign;
 
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	negative = 0;
-	while(*str == '-' || *str == '+')
-		if (*str++ == '-')
-			negative = 1 - negative;
-	n = 0;
-	while (*str >= '0' && *str <= '9')
-		n = n * 10 + *str++ - '0';
-	if (negative)
-		n*= -1;
-	return (n);
+        i = 0;
+        while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
+                i++;
+        sign = 1;
+        while (str[i] == '-' || str[i] == '+')
+        {
+                if (str[i] == '-')
+                        sign = -sign;
+                i++;
+        }
+        n = 0;
+        while (str[i] >= '0' && str[i] <= '9')
+                n = n * 10 + str[i++] - '0';
+        return (n * sign);
+}
