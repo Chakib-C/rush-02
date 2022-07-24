@@ -19,7 +19,7 @@ char	ft_putstr(char *str)
 	i = 0;
 	if (str[i] >= 97 && str[i] <= 122)
 	{
-		write(1, str, strlen(str));
+		write(1, str, ft_strlen(str));
 	}
 }
 
