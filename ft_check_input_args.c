@@ -15,7 +15,7 @@
 int ft_check_input_args(int ac, char **av, int *input)
 {
   *input = (ft_atoi(av))
-  if ((ac < 2 && ac > 3)|| (*input < 0)
+  if ((ac < 2 && ac > 3)|| (*input < 0))
   {
 	  write(1, "error", 5);
 	  return (-1);
